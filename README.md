@@ -1,4 +1,4 @@
-# Logistic Regression Classifier for Yelp Dataset
+# Logistic Regression for Yelp Dataset
 Predicting Yelp ratings by using the text of reviews.
 
 
