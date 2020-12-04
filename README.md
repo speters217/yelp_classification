@@ -26,7 +26,7 @@ Next, I looked to Scikit-learn's repertoire of model creation software. I
 started by vectorizing the text into a tf-idf matrix. Then, I split the 
 data into a 75:25 training:testing ratio. Lastly, I implemented SMOTE oversampling 
 and fit the model to the training data. I would spend quite a while trying out 
-various models with various parameters. Even though I abandoned many after model 
+various models with various parameters. Even though I abandoned many model 
 types after finding success with Logistic Regression, here are the scores of some 
 models I tried:
 
