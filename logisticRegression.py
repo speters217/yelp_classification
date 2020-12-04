@@ -3,36 +3,10 @@ Author: Samuel Peters (sjpeters3@wisc.edu)
 Date: 12/3/20
 Logistic Regression Classifier for Yelp Dataset
 
-Background:
-This program aims to create a model that maximizes root mean squared error 
-on a dataset of Yelp reviews from restaurants near Madison, WI. The final model 
-placed first in my UW-Madison Stat 333 class' Kaggle competition.
-
-The Data:
-We were given 57,008 reviews that consisted of the star rating, text, city, 
-postal code, number of words and characters, number of 'positive' and 
-'negative words', as well as term frequency for 500 words of the review. We 
-were also given a similar dataset of 38,005 entries for which we had to predict 
-the star ratings. I decided to preprossess the text on my own using the text of 
-the reviews, rather than using the provided predictors.
-
-My Process:
-First, I (naively) started by creating my own implementation of a Naive Bayes 
-classifier using a bag of words approach. At its best it could achieve an 
-rmse of 1.2 while taking a good deal of time. To its credit, it did only 
-classify discrete 1-5 values which was not the best for rmse.
-
-Next, I looked to Scikit-learn's repertoire of model creation software. I 
-started by vectorizing the text into a tf-idf matrix. Then, I split the 
-data into a 75:25 training:testing ratio. Lastly, I implemented SMOTE oversampling. 
-I would spend quite a while trying out various models with various 
-parameters. After I found the best parameters for the tf-idf encoding, here 
-are the rmse scores for the best versions I was able to achieve for most of 
-the models I tried (though I abandoned many after finding success with Logistic Regression):
-
-Multinomial Naive Bayes: 0.8115149239086666
-XGBoost Classifier: 0.7817620124917976
-Logistic Regression: 0.6694512778569809
+Creates a Logistic Regression model for predicting Yelp ratings from review text. 
+This code could easily be modified to use a different model for the same 
+data. Likewise, minimal editing could use GridSearchCV for better hyperparameter 
+tuning.
     
 The Final Model:
     Type: Logistic Regression
@@ -46,19 +20,6 @@ The Final Model:
     25% test RMSE: 0.6694512778569809
     Kaggle Public RMSE: 0.66942
     Kaggle Private RMSE: 0.66440
-
-Final Remarks: 
-While the model performs well, it could still do with some improvement.
-For one, the model parameters could be tuned with more accuracy, though I argue
-with diminishing returns. Tuning the regularization strength on smaller values 
-(larger C) could improve the score, though an increase from 4 to 5 saw small gains and 
-roughly 3 times the running time. Also, I was unable to give the solver and 
-penalty combinations sufficient attention. I also think that tree-based models 
-such as XGBoost and Random Forest have promise, yet I didn't have enough time 
-or resources to explore those options sufficiently. After I created the final 
-model, I adjusted the code so that the testing set was not used for tf-idf 
-vectorization. This makes the code more modular and easier to predict on any 
-set, though it changes the model results slightly.
 """
 
 import numpy as np
