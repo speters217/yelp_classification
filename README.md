@@ -49,7 +49,7 @@ models I tried:
     Kaggle Public RMSE: 0.66942
     Kaggle Private RMSE: 0.66440
 
-![Histogram of predicted star ratings and their expected proportions](FinalPredictions.png)
+![Histogram of predicted star ratings and their expected proportions](Pictures/FinalPredictions.png)
 
 From the above image, one can see that the model predicted approximately 
 the number of 1 and 3 star reviews that we would expect. 2 star reviews were 
@@ -57,7 +57,7 @@ close, while 4 and 5 stars were under and over predicted, respectively.
 This makes sense as we use continuous values for our predictions, and the 
 differences between 1 and 2 star as well as 4 and 5 star reviews is slight. 
 
-![Histogram of predicted star ratings and their expected proportions using SMOTE 'not majority' oversampling](AlternativePredictions.png)
+![Histogram of predicted star ratings and their expected proportions using SMOTE 'not majority' oversampling](Pictures/AlternativePredictions.png)
 
 Models that were built with different oversampling techniques provided 
 similar rmse scores while producing interesting differences in the graph. 
@@ -67,7 +67,7 @@ slightly worse rmse of 0.6797. This is likely due to values being right on the
 boundary of two values, so a slight change will drastically change the graph, 
 while not equating to any actual gain in performance.
 
-![Kaggle rankings](privateLeaderboard.png)
+![Kaggle rankings](Pictures/privateLeaderboard.png)
 
 ## Final Remarks
 While the model performs well, it could still do with some improvement.
